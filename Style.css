@@ -1,0 +1,1035 @@
+:root {
+    --bg-color:#cba456;
+    --bg-color-coffee:#542e05;
+    --bg-color-light:#9c6d0f;
+    --color-text:#f2f0eb;
+    --color-text-green:#276e10;
+    --bg-color-black:#0a0a0a;
+    --bg-color-orange:#703301;
+    --bg-color-blue:#3535bd;
+    --bg-color-pink:#873269;
+    --bg-color-white:#e3dee1;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   text-decoration: none;
+   border: none;
+   outline: none;
+   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+     background: var(--bg-color-white);
+}
+
+.header {
+    padding: 1rem;
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color-white);
+}
+.header.active {
+  box-shadow: 0 1px 5px var(--bg-color-black);
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.header .nav a{
+     font-size: 1.6rem;
+     color: var(--bg-color-black);
+     font-weight: 600;
+     position: relative;
+}
+
+.header .nav a::before{
+  content: "";
+  width: 0%;
+  height: 3px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--bg-color-light);
+  transition: .3s;
+  cursor: pointer;
+  scale: 0;
+}
+
+.header .nav a:hover::before{
+  width: 100%;
+  scale: 1;
+}
+
+.header .nav a:hover{
+   color: var(--bg-color-coffee);
+}
+
+.header .nav .link.active::before{
+  width: 100%;
+  scale: 1;
+}
+
+.header .fa-bars{
+   display: none;
+}
+
+.header .nav .fa-xmark{
+   display: none;
+}
+
+/* ======================= section-home========================= */
+#section-home {
+  padding: 1rem;
+  margin: 5rem 0;
+  background-color: var(--bg-color);
+}
+
+#section-home .text{
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+#section-home .logo-descrpition{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#section-home .logo-descrpition .descrpition{
+  width: 30%;
+}
+
+#section-home .logo-descrpition .descrpition h1{
+  font-size: 2.5rem;
+}
+
+#section-home .logo-descrpition .descrpition p{
+  font-size: 1.7rem;
+  line-height: 2.2rem;
+}
+
+#section-home .logo-descrpition .image img{
+  width: 600px;
+}
+
+/*================= section Barista Coffees ================= */
+ 
+.section-Barista {
+  margin: 10rem 0;
+}
+
+.section-Barista .logo-barista {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.section-Barista .container-products {
+   display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(40%,1fr));
+   padding: .7rem;
+   gap: 2rem;
+}
+
+.section-Barista .container-products .cart {
+    display: flex;
+    align-items: center;
+    height: 130px;
+    overflow: hidden;
+    object-fit: cover;
+    justify-content: space-around;
+    box-shadow: 0 0 5px #02727aab;
+    border-radius: 1rem;
+}
+
+.section-Barista .container-products .cart .img {
+    width: 90px;
+    height: 70px;
+}
+
+.section-Barista .container-products .cart .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-Barista .container-products .cart .infromations {
+ font-size: 1.1rem;
+ position: relative;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: -50px;
+  right: 0px;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price span{
+   color: var(--color-text-green);
+   font-weight: 600;
+   margin-right: 1.5rem;
+   font-size: 1.2rem;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price button{
+  width: 100px;
+  padding: .3rem;
+  font-size: 1.2rem;
+  border-radius: .8rem;
+  cursor: pointer;
+  border: 2px solid var(--color-text);
+  background: #31a711b3;
+  transition: .2s;
+} 
+.section-Barista .container-products .cart .infromations .butt-price button:hover{
+  letter-spacing: 1px; 
+  color: var(--color-text);
+} 
+
+
+/*================= section form informatins ================= */
+
+.form-informatins {
+  display: flex;
+  justify-content: space-around;
+  background: #757272;
+}
+
+.form-informatins .delivery  .form{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+}
+
+.form-informatins .delivery  .form input{
+  width: 100%;
+  height: 3.5rem;
+  padding: .3rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+.form-informatins .delivery  .form input:focus{
+  border: 2px solid #05768a;
+  background: #f2f0eb;
+}
+
+.form-informatins .delivery  .form textarea{
+  width: 100%;
+  height: 300px;
+  padding: .3rem;
+  resize: none;
+  overflow: auto;
+  margin-bottom: 2rem;
+}
+
+.form-informatins .delivery  .form textarea:focus{
+    border: 2px solid #05768a;
+}
+
+.form-informatins .delivery  .form button{
+  width: 250px;
+  padding: .3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: #054d83;
+  color: var(--bg-color-white);
+  border: 2px solid #585a57;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: .3s;
+}
+
+.form-informatins .delivery  .form button:hover{
+  letter-spacing: 1px;
+  background: #054d83;
+  transform: scale(1.1);
+}
+
+.form-informatins  .infromation .title{
+  margin-bottom: 2rem;
+}
+
+.form-informatins  .infromation .title p{
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--bg-color-white);
+  font-weight: 600;
+}
+
+.form-informatins  .infromation .title .communication{
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+   margin: 2rem 0;
+}
+
+.form-informatins  .infromation .title .communication span {
+   margin-bottom: 1.2rem;
+   font-size: 1.5rem;
+}
+
+.form-informatins  .infromation .title .communication a {
+   font-size: 1.5rem;
+   color: var(--bg-color-black);
+   transition: .2s;
+}
+  
+.form-informatins  .infromation .title .communication a:hover {
+   color: #190d68;
+   border-bottom: 1px solid #190d68;
+  }
+  
+.form-informatins  .infromation .title .communication .fa-phone {
+  color: var(--color-text-green);
+}
+
+.form-informatins  .infromation .title .communication .fa-location-dot {
+  color: var(--bg-color-blue);
+}
+
+.form-informatins  .infromation  {
+  position: relative;
+  padding: 1rem;
+}
+
+.form-informatins  .infromation .icons {
+   position: absolute;
+   bottom: 200px;
+   left: 50px;
+}
+
+.form-informatins  .infromation .icons a{
+   margin: 0 1.5rem;
+}
+
+.form-informatins  .infromation .icons a i{
+  font-size: 2.5rem;
+  color: #1a1919;
+}
+
+.form-informatins  .infromation .icons a .fa-facebook-f{
+  color:#190d68;
+}
+
+.form-informatins  .infromation .icons a .fa-square-instagram{
+  color:var(--bg-color-pink);
+}
+
+/*========== contianer informations extra ============ */
+
+.contianer-informations-extra {
+  padding: 3rem;
+  background: #757272;
+  border-top:5px solid var(--bg-color-white);
+}
+
+
+.contianer-informations-extra .section-one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contianer-informations-extra .section-one div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.contianer-informations-extra .section-one .logo-text img{
+  width: 230px;
+}
+
+.contianer-informations-extra .section-one .logo-text p{
+   font-size: 1.2rem;
+}
+
+.contianer-informations-extra .section-one  .icons-links h1{
+  margin-bottom: 1.5rem;
+}
+
+.contianer-informations-extra .section-one  .icons-links a{
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: .2s;
+  color: var(--color-text);
+}
+
+.contianer-informations-extra .section-one  .icons-links a:hover{
+  color: var(--bg-color-blue);
+}
+
+.contianer-informations-extra .section-one  .infromation {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}
+
+.contianer-informations-extra .section-one  .infromation span{
+   margin-bottom: 1.2rem;
+   font-size: 1.5rem;
+}
+
+.contianer-informations-extra .section-one  .infromation .fa-phone{
+  color: var(--color-text-green);
+}
+
+.contianer-informations-extra .section-one  .infromation .fa-location-dot{
+  color: var(--bg-color-blue);
+}
+
+.contianer-informations-extra .section-one  .infromation a{
+  color: var(--color-text);
+  font-size: 1.4rem;
+  transition: .3s;
+}
+
+.contianer-informations-extra .section-one  .infromation a:hover{
+  color: var(--bg-color-blue);
+  border-bottom: 1px solid var(--bg-color-blue);
+}
+
+.contianer-informations-extra .section-one  .infromation a i{
+  color: var(--bg-color-black);
+}
+
+
+/* ================ section End Project ================== */
+
+.End-Project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background: var(--bg-color-black);
+  color: var(--color-text);
+}
+
+/* ================== media query ================ */
+
+@media (min-width: 359px ) and (max-width: 899px ) {
+  
+.header {
+    padding: 0;
+    position: static;
+  }
+.header.active {
+  box-shadow: none;
+}
+
+.header .nav {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    background: #383938;
+    width: 0%;
+    min-height: 0px;
+    position: fixed;
+    top:0rem;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.header .nav.active {
+  animation: navbar .2s linear forwards ;
+}
+@keyframes navbar {
+  100% {
+     width: 100%;
+     min-height: 260px;
+  }
+}
+
+.header .nav a{
+     margin: 1rem 1rem;
+     font-size: 1.6rem;
+     color: var(--bg-color-white);
+}
+
+.header .fa-bars{
+   display: block;
+   position: fixed;
+   top: .4rem;
+   left: .5rem;
+   font-size: 2.2rem;
+}
+
+.header .nav .fa-xmark{
+   display: block;
+   position: absolute;
+   top: .5rem;
+   right: .5rem;
+   font-size: 2.3rem;
+   color: var(--bg-color-white);
+}
+
+/* ======================= section-home========================= */
+
+#section-home {
+  padding: 1rem;
+}
+
+#section-home .text{
+  font-size: 1.2rem;
+}
+
+#section-home .logo-descrpition{
+  display: flex;
+  flex-direction: column;
+}
+
+#section-home .logo-descrpition .descrpition{
+  width: 100%;
+}
+
+#section-home .logo-descrpition .descrpition h1{
+  font-size: 1.8rem;
+}
+
+#section-home .logo-descrpition .descrpition p{
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+#section-home .logo-descrpition .image img{
+  width: 380px;
+}
+
+/*================= section Barista Coffees ================= */
+
+.section-Barista .logo-barista img{
+  width: 280px;
+}
+
+.section-Barista .container-products {
+   display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+   padding: .7rem;
+   gap: 1.5rem;
+}
+
+.section-Barista .container-products .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 310px;
+    padding: .5rem;
+}
+
+.section-Barista .container-products .cart .img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+.section-Barista .container-products .cart .infromations {
+    width: 90%;
+}
+
+/*================= section form informatins ================= */
+
+.form-informatins {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-informatins .delivery  .form{
+  padding: 1rem;
+  width: 300px;
+}
+
+.form-informatins .delivery  .form input{
+  height: 3rem;
+}
+
+.form-informatins .delivery  .form textarea{
+  height: 200px;
+}
+
+.form-informatins .delivery  .form button{
+  width: 200px;
+}
+
+.form-informatins  .infromation .title{
+  margin-bottom: 2rem;
+}
+
+.form-informatins  .infromation .title p{
+  font-size: 1rem;
+}
+
+.form-informatins  .infromation .title .communication{
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+   margin: 2rem 0;
+}
+
+.form-informatins  .infromation .title .communication span {
+   margin-bottom: 1.2rem;
+   font-size: 1.1rem;
+}
+
+.form-informatins  .infromation .title .communication a {
+   font-size: 1.1rem;
+}
+ 
+.form-informatins  .infromation  {
+  position: relative;
+  padding: 1rem;
+}
+
+.form-informatins  .infromation .icons {
+   position: static;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.form-informatins  .infromation .icons a{
+   margin: 0 .8rem;
+}
+
+.form-informatins  .infromation .icons a i{
+  font-size: 1.8rem;
+}
+
+/*========== contianer informations extra ============ */
+.contianer-informations-extra {
+  padding: 3rem;
+  background: #757272;
+  border-top:5px solid var(--bg-color-white);
+}
+
+
+.contianer-informations-extra .section-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contianer-informations-extra .section-one div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contianer-informations-extra .section-one .logo-text img{
+  width: 180px;
+}
+
+.contianer-informations-extra .section-one .logo-text p{
+   font-size: 1rem;
+   margin-bottom: 2rem;
+}
+
+.contianer-informations-extra .section-one  .icons-links h1{
+  margin-bottom: .5rem;
+}
+
+.contianer-informations-extra .section-one  .icons-links a{
+  font-size: 1.3rem;
+}
+
+.contianer-informations-extra .section-one  .icons-links {
+  margin-bottom: 2rem;
+}
+
+.contianer-informations-extra .section-one  .infromation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contianer-informations-extra .section-one  .infromation span{
+   font-size: 1.2rem;
+}
+
+.contianer-informations-extra .section-one  .infromation a{
+  font-size: 1.2rem;
+}
+
+.contianer-informations-extra .section-one  .infromation a i{
+  color: var(--bg-color-black);
+}
+
+
+/* ================ section End Project ================== */
+
+.End-Project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background: var(--bg-color-black);
+  color: var(--color-text);
+}
+
+.End-Project h2{
+ font-size: 1.2rem;
+}
+
+}
+
+/* ================== media qeury ======================= */
+
+@media (min-width: 525px ) and (max-width: 722px )  {
+/*================= header navbar ================= */
+  @keyframes navbar {
+  100% {
+     width: 90%;
+     min-height: 260px;
+  }
+}
+
+/*================= section form informatins ================= */
+
+.form-informatins .delivery  .form{
+ 
+  width: 480px;
+}
+
+.form-informatins .delivery  .form button{
+  width: 250px;
+}
+
+.form-informatins  .infromation .title p{
+  font-size: 1.5rem;
+}
+
+.form-informatins  .infromation .title .communication span {
+   font-size: 1.6rem;
+}
+
+.form-informatins  .infromation .title .communication a {
+   font-size: 1.5rem;
+   margin-bottom: 2rem;
+}
+ 
+.form-informatins  .infromation  {
+  margin-bottom: 4rem;
+}
+
+.form-informatins  .infromation .icons a i{
+  font-size: 2.3rem;
+}
+
+/*========== contianer informations extra ============ */ 
+
+.contianer-informations-extra .section-one .logo-text img{
+  width: 200px;
+}
+
+.contianer-informations-extra .section-one .logo-text p{
+   font-size: 1.3rem;
+   width: 80%;
+   margin-bottom: 2rem;
+}
+
+.contianer-informations-extra .section-one  .icons-links h1{
+  margin-bottom: 1.3rem;
+}
+
+.contianer-informations-extra .section-one  .icons-links a{
+  font-size: 1.6rem;
+}
+
+.contianer-informations-extra .section-one  .infromation span{
+   font-size: 1.6rem;
+}
+
+.contianer-informations-extra .section-one  .infromation a{
+  font-size: 1.6rem;
+}
+
+}
+
+/* ================== media qeury ======================= */
+@media (min-width: 721px ) and (max-width: 899px ){
+
+ /*================= section form informatins ================= */
+
+.form-informatins .delivery {
+  width: 650px;
+}
+
+.form-informatins .delivery  .form{
+  width: 100%;
+}
+
+.form-informatins .delivery  .form button{
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.form-informatins  .infromation .title p{
+  font-size: 1.8rem;
+}
+
+.form-informatins  .infromation .title .communication span {
+   font-size: 1.5rem;
+}
+
+.form-informatins  .infromation .title .communication a {
+   font-size: 1.5rem;
+}
+ 
+.form-informatins  .infromation  {
+  margin-bottom: 4rem;
+}
+
+.form-informatins  .infromation .icons {
+  margin-top: 4rem;
+}
+
+.form-informatins  .infromation .icons a i{
+  font-size: 3rem;
+  margin: 0 1.5rem;
+}
+
+/*========== contianer informations extra ============ */ 
+
+.contianer-informations-extra .section-one .logo-text p{
+   font-size: 1.4rem;
+   text-align: center;
+}
+
+.contianer-informations-extra .section-one  .icons-links h1{
+  margin-bottom: 1.3rem;
+}
+
+/*================= section Barista Coffees ================= */
+
+.section-Barista .container-products .cart {
+    height: 300px;
+    padding: 0rem;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: static;
+  margin-top: 1.8rem;
+}
+
+}
+
+/* ================== media qeury ======================= */
+@media (min-width: 899px ) and (max-width: 1150px ) {
+
+
+/*================= section Barista Coffees ================= */
+
+.section-Barista .container-products {
+   gap: 1rem;
+}  
+
+.section-Barista .container-products .cart {
+    height: 180px;
+}
+
+.section-Barista .container-products .cart .img {
+    width: 90px;
+    height: 90px;
+   padding: .7rem;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 0px;
+  right: 0px;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price span{
+   margin-right: 0rem;
+   font-size: 1.4rem;
+   position: absolute;
+   bottom: -60px;
+   left: 15px;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price button{
+   position: absolute;
+   bottom: -60px;
+   right: 15px;
+} 
+
+/*================= section form informatins ================= */
+
+
+.form-informatins {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-informatins .delivery  .form{
+  width: 500px;
+}
+
+.form-informatins .delivery  .form textarea{
+  height: 280px;
+}
+
+.form-informatins .delivery  .form button{
+  font-size: 1.5rem;
+}
+
+
+.form-informatins  .infromation .title .communication span {
+   margin-bottom: 1.2rem;
+   font-size: 1.5rem;
+}
+
+.form-informatins  .infromation  {
+  position: relative;
+  padding: 1rem;
+}
+
+.form-informatins  .infromation .icons {
+   position: static;
+   margin: 5rem 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.form-informatins  .infromation .icons a{
+   margin: 0 1.5rem;
+}
+
+.form-informatins  .infromation .icons a i{
+  font-size: 2.8rem;
+}
+
+/*========== contianer informations extra ============ */
+.contianer-informations-extra .section-one  .icons-links h1{
+  margin-bottom: 1.3rem;
+  font-size: 1.5rem;
+}
+
+}
+
+/* ================== media qeury ======================= */
+@media (min-width: 1150px ) and (max-width: 1460px ) {
+
+/*================= section Barista Coffees ================= */
+.section-Barista .container-products .cart {
+    height: 180px;
+}
+
+.section-Barista .container-products .cart .img {
+    width: 90px;
+    height: 90px;
+   padding: .3rem;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price{
+  position: relative;
+  bottom: 0px;
+  right: 0px;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price span{
+   position: absolute;
+   bottom: -60px;
+   left: 15px;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price button{
+   position: absolute;
+   bottom: -60px;
+   right: 15px;
+} 
+
+/*========== contianer informations extra ============ */
+.contianer-informations-extra .section-one  .icons-links h1{
+  margin-bottom: 1.3rem;
+  font-size: 1.6rem;
+}
+
+}
+
+/* ================== media qeury ======================= */
+@media (min-width: 1460px ) and (max-width: 1720px ) {
+  
+/*================= section Barista Coffees ================= */
+
+.section-Barista .container-products {
+   gap: 1rem;
+}  
+
+.section-Barista .container-products .cart {
+    height: 180px;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  bottom: -50px;
+  right: 0px;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price span{
+   position: absolute;
+   right: 180px;
+   margin-right: 0rem;
+   font-size: 1.4rem;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price button{
+  width: 120px;
+  position: absolute;
+  right: 10px;
+  font-size: 1.3rem;
+  padding: .4rem;
+} 
+  
+}
