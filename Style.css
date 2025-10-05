@@ -54,7 +54,7 @@ body {
 }
 
 .header .nav a{
-     font-size: 1.6rem;
+     font-size: 1.8rem;
      color: var(--bg-color-black);
      font-weight: 600;
      position: relative;
@@ -1032,4 +1032,20 @@ body {
   padding: .4rem;
 } 
   
+}
+
+/* ================== media query ================ */
+
+@media (min-width: 359px ) and (max-width: 470px ) {
+  .End-Project h2 {
+   font-size: 1rem;
+}
+}
+/* ================== media query ================ */
+
+@media (min-width: 359px ) and (max-width: 415px ) {
+  .End-Project h2 {
+   font-size: .8rem;
+}
+
 }
