@@ -27,11 +27,9 @@ html {
 body {
     height: 100vh;
     font-family: sans-serif;
-     background: var(--bg-color-white);
 }
 
 .header {
-    padding: 1rem;
     position: fixed;
     top: 0rem;
     right: 0rem;
@@ -51,10 +49,11 @@ body {
     align-items: center;
     justify-content: space-around;
     width: 50%;
+    padding: 12px;
 }
 
 .header .nav a{
-     font-size: 1.8rem;
+     font-size: 1.1rem;
      color: var(--bg-color-black);
      font-weight: 600;
      position: relative;
@@ -89,23 +88,43 @@ body {
 
 .header .fa-bars{
    display: none;
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: var(--bg-color-black);
+   transition: all 0.3s ease;
+}
+
+.header .fa-bars:hover {
+   color: var(--bg-color-coffee);
 }
 
 .header .nav .fa-xmark{
    display: none;
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: var(--bg-color-black);
+   transition: all 0.3s ease;
+   margin-right: 1rem;
+}
+
+.header .nav .fa-xmark:hover {
+   color: var(--bg-color-coffee);
+}
+.header  .image{
+    width: 40px;
+    position: absolute;
+    top: 4px;
+    right: 20px;
+  }
+
+.header  .image img{
+    width: 100%;
 }
 
 /* ======================= section-home========================= */
 #section-home {
-  padding: 1rem;
-  margin: 5rem 0;
-  background-color: var(--bg-color);
-}
-
-#section-home .text{
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
+  margin: 3rem 0 5rem 0;
+  position: relative;
 }
 
 #section-home .logo-descrpition{
@@ -115,815 +134,324 @@ body {
 }
 
 #section-home .logo-descrpition .descrpition{
-  width: 30%;
+  width: 50%;
+  z-index: 10;
 }
 
-#section-home .logo-descrpition .descrpition h1{
-  font-size: 2.5rem;
+
+#section-home .logo-descrpition .descrpition h2{
+  font-size: 1.5rem;
+
 }
 
 #section-home .logo-descrpition .descrpition p{
-  font-size: 1.7rem;
-  line-height: 2.2rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
 
 #section-home .logo-descrpition .image img{
-  width: 600px;
+  width: 300px;
+   z-index: 10;
+}
+
+#section-home .logo{
+  position: absolute;
+  top: 0px;
+  opacity: .5;
+   z-index: -1;
+   width: 100%;
+   height: 95vh;
+}
+#section-home .logo img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
 
 /*================= section Barista Coffees ================= */
  
 .section-Barista {
-  margin: 10rem 0;
+  margin: 5rem 0;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #f9f7f4 0%, #f3ede3 100%);
 }
 
 .section-Barista .logo-barista {
    display: flex;
    align-items: center;
    justify-content: center;
+   margin-bottom: 2rem;
+   opacity: 0.7;
+}
+
+.section-Barista .logo-barista img {
+   width: 150px;
+   height: auto;
 }
 
 .section-Barista .container-products {
    display: grid;
-   grid-template-columns: repeat(auto-fill,minmax(40%,1fr));
-   padding: .7rem;
-   gap: 2rem;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   padding: 2rem 3rem;
+   gap: 2.5rem;
+   max-width: 1400px;
+   margin: 0 auto;
 }
 
 .section-Barista .container-products .cart {
     display: flex;
-    align-items: center;
-    height: 130px;
-    overflow: hidden;
-    object-fit: cover;
-    justify-content: space-around;
-    box-shadow: 0 0 5px #02727aab;
+    flex-direction: column;
+    background: white;
     border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 20px #542e051a;
+    border: 1px solid #f0e8e0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.section-Barista .container-products .cart:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px #542e0533;
+    border-color: var(--bg-color-light);
 }
 
 .section-Barista .container-products .cart .img {
-    width: 90px;
-    height: 70px;
+    width: 100%;
+    min-height: 240px;
+    background: linear-gradient(135deg, #f9f7f4 0%, #fbfbfa 100%);
 }
 
 .section-Barista .container-products .cart .img img {
     width: 100%;
     height: 100%;
+    scale: .5;
     object-fit: cover;
+    transition: transform 0.4s ease;
 }
+
 
 .section-Barista .container-products .cart .infromations {
- font-size: 1.1rem;
- position: relative;
-}
-
-.section-Barista .container-products .cart .infromations .butt-price{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: absolute;
-  bottom: -50px;
-  right: 0px;
-}
-
-.section-Barista .container-products .cart .infromations .butt-price span{
-   color: var(--color-text-green);
-   font-weight: 600;
-   margin-right: 1.5rem;
-   font-size: 1.2rem;
-}
-
-.section-Barista .container-products .cart .infromations .butt-price button{
-  width: 100px;
-  padding: .3rem;
-  font-size: 1.2rem;
-  border-radius: .8rem;
-  cursor: pointer;
-  border: 2px solid var(--color-text);
-  background: #31a711b3;
-  transition: .2s;
-} 
-.section-Barista .container-products .cart .infromations .butt-price button:hover{
-  letter-spacing: 1px; 
-  color: var(--color-text);
-} 
-
-
-/*================= section form informatins ================= */
-
-.form-informatins {
-  display: flex;
-  justify-content: space-around;
-  background: #757272;
-}
-
-.form-informatins .delivery  .form{
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 600px;
-}
-
-.form-informatins .delivery  .form input{
-  width: 100%;
-  height: 3.5rem;
-  padding: .3rem;
-  margin-bottom: 2rem;
-  border-radius: 1rem;
-}
-
-.form-informatins .delivery  .form input:focus{
-  border: 2px solid #05768a;
-  background: #f2f0eb;
-}
-
-.form-informatins .delivery  .form textarea{
-  width: 100%;
-  height: 300px;
-  padding: .3rem;
-  resize: none;
-  overflow: auto;
-  margin-bottom: 2rem;
-}
-
-.form-informatins .delivery  .form textarea:focus{
-    border: 2px solid #05768a;
-}
-
-.form-informatins .delivery  .form button{
-  width: 250px;
-  padding: .3rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  background: #054d83;
-  color: var(--bg-color-white);
-  border: 2px solid #585a57;
-  cursor: pointer;
-  border-radius: 1rem;
-  transition: .3s;
-}
-
-.form-informatins .delivery  .form button:hover{
-  letter-spacing: 1px;
-  background: #054d83;
-  transform: scale(1.1);
-}
-
-.form-informatins  .infromation .title{
-  margin-bottom: 2rem;
-}
-
-.form-informatins  .infromation .title p{
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--bg-color-white);
-  font-weight: 600;
-}
-
-.form-informatins  .infromation .title .communication{
-   display: flex;
-   flex-direction: column;
-   align-items: end;
-   margin: 2rem 0;
-}
-
-.form-informatins  .infromation .title .communication span {
-   margin-bottom: 1.2rem;
-   font-size: 1.5rem;
-}
-
-.form-informatins  .infromation .title .communication a {
-   font-size: 1.5rem;
-   color: var(--bg-color-black);
-   transition: .2s;
-}
-  
-.form-informatins  .infromation .title .communication a:hover {
-   color: #190d68;
-   border-bottom: 1px solid #190d68;
-  }
-  
-.form-informatins  .infromation .title .communication .fa-phone {
-  color: var(--color-text-green);
-}
-
-.form-informatins  .infromation .title .communication .fa-location-dot {
-  color: var(--bg-color-blue);
-}
-
-.form-informatins  .infromation  {
-  position: relative;
-  padding: 1rem;
-}
-
-.form-informatins  .infromation .icons {
-   position: absolute;
-   bottom: 200px;
-   left: 50px;
-}
-
-.form-informatins  .infromation .icons a{
-   margin: 0 1.5rem;
-}
-
-.form-informatins  .infromation .icons a i{
-  font-size: 2.5rem;
-  color: #1a1919;
-}
-
-.form-informatins  .infromation .icons a .fa-facebook-f{
-  color:#190d68;
-}
-
-.form-informatins  .infromation .icons a .fa-square-instagram{
-  color:var(--bg-color-pink);
-}
-
-/*========== contianer informations extra ============ */
-
-.contianer-informations-extra {
-  padding: 3rem;
-  background: #757272;
-  border-top:5px solid var(--bg-color-white);
-}
-
-
-.contianer-informations-extra .section-one {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contianer-informations-extra .section-one div {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-}
-
-.contianer-informations-extra .section-one .logo-text img{
-  width: 230px;
-}
-
-.contianer-informations-extra .section-one .logo-text p{
-   font-size: 1.2rem;
-}
-
-.contianer-informations-extra .section-one  .icons-links h1{
-  margin-bottom: 1.5rem;
-}
-
-.contianer-informations-extra .section-one  .icons-links a{
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  transition: .2s;
-  color: var(--color-text);
-}
-
-.contianer-informations-extra .section-one  .icons-links a:hover{
-  color: var(--bg-color-blue);
-}
-
-.contianer-informations-extra .section-one  .infromation {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: center;
-}
-
-.contianer-informations-extra .section-one  .infromation span{
-   margin-bottom: 1.2rem;
-   font-size: 1.5rem;
-}
-
-.contianer-informations-extra .section-one  .infromation .fa-phone{
-  color: var(--color-text-green);
-}
-
-.contianer-informations-extra .section-one  .infromation .fa-location-dot{
-  color: var(--bg-color-blue);
-}
-
-.contianer-informations-extra .section-one  .infromation a{
-  color: var(--color-text);
-  font-size: 1.4rem;
-  transition: .3s;
-}
-
-.contianer-informations-extra .section-one  .infromation a:hover{
-  color: var(--bg-color-blue);
-  border-bottom: 1px solid var(--bg-color-blue);
-}
-
-.contianer-informations-extra .section-one  .infromation a i{
-  color: var(--bg-color-black);
-}
-
-
-/* ================ section End Project ================== */
-
-.End-Project {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-  background: var(--bg-color-black);
-  color: var(--color-text);
-}
-
-/* ================== media query ================ */
-
-@media (min-width: 359px ) and (max-width: 899px ) {
-  
-.header {
-    padding: 0;
-    position: static;
-  }
-.header.active {
-  box-shadow: none;
-}
-
-.header .nav {
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    justify-content: flex-start;
-    background: #383938;
-    width: 0%;
-    min-height: 0px;
-    position: fixed;
-    top:0rem;
-    overflow: hidden;
-    z-index: 999;
-}
-
-.header .nav.active {
-  animation: navbar .2s linear forwards ;
-}
-@keyframes navbar {
-  100% {
-     width: 100%;
-     min-height: 260px;
-  }
-}
-
-.header .nav a{
-     margin: 1rem 1rem;
-     font-size: 1.6rem;
-     color: var(--bg-color-white);
-}
-
-.header .fa-bars{
-   display: block;
-   position: fixed;
-   top: .4rem;
-   left: .5rem;
-   font-size: 2.2rem;
-}
-
-.header .nav .fa-xmark{
-   display: block;
-   position: absolute;
-   top: .5rem;
-   right: .5rem;
-   font-size: 2.3rem;
-   color: var(--bg-color-white);
-}
-
-/* ======================= section-home========================= */
-
-#section-home {
-  padding: 1rem;
-}
-
-#section-home .text{
-  font-size: 1.2rem;
-}
-
-#section-home .logo-descrpition{
-  display: flex;
-  flex-direction: column;
-}
-
-#section-home .logo-descrpition .descrpition{
-  width: 100%;
-}
-
-#section-home .logo-descrpition .descrpition h1{
-  font-size: 1.8rem;
-}
-
-#section-home .logo-descrpition .descrpition p{
-  font-size: 1.4rem;
-  line-height: 2rem;
-}
-
-#section-home .logo-descrpition .image img{
-  width: 380px;
-}
-
-/*================= section Barista Coffees ================= */
-
-.section-Barista .logo-barista img{
-  width: 280px;
-}
-
-.section-Barista .container-products {
-   display: grid;
-   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-   padding: .7rem;
-   gap: 1.5rem;
-}
-
-.section-Barista .container-products .cart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 310px;
-    padding: .5rem;
-}
-
-.section-Barista .container-products .cart .img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 1rem;
-}
-
-.section-Barista .container-products .cart .infromations {
-    width: 90%;
-}
-
-/*================= section form informatins ================= */
-
-.form-informatins {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-informatins .delivery  .form{
-  padding: 1rem;
-  width: 300px;
-}
-
-.form-informatins .delivery  .form input{
-  height: 3rem;
-}
-
-.form-informatins .delivery  .form textarea{
-  height: 200px;
-}
-
-.form-informatins .delivery  .form button{
-  width: 200px;
-}
-
-.form-informatins  .infromation .title{
-  margin-bottom: 2rem;
-}
-
-.form-informatins  .infromation .title p{
-  font-size: 1rem;
-}
-
-.form-informatins  .infromation .title .communication{
-   display: flex;
-   flex-direction: column;
-   align-items: end;
-   margin: 2rem 0;
-}
-
-.form-informatins  .infromation .title .communication span {
-   margin-bottom: 1.2rem;
-   font-size: 1.1rem;
-}
-
-.form-informatins  .infromation .title .communication a {
-   font-size: 1.1rem;
-}
- 
-.form-informatins  .infromation  {
-  position: relative;
-  padding: 1rem;
-}
-
-.form-informatins  .infromation .icons {
-   position: static;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.form-informatins  .infromation .icons a{
-   margin: 0 .8rem;
-}
-
-.form-informatins  .infromation .icons a i{
-  font-size: 1.8rem;
-}
-
-/*========== contianer informations extra ============ */
-.contianer-informations-extra {
-  padding: 3rem;
-  background: #757272;
-  border-top:5px solid var(--bg-color-white);
-}
-
-
-.contianer-informations-extra .section-one {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.contianer-informations-extra .section-one div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.contianer-informations-extra .section-one .logo-text img{
-  width: 180px;
-}
-
-.contianer-informations-extra .section-one .logo-text p{
-   font-size: 1rem;
-   margin-bottom: 2rem;
-}
-
-.contianer-informations-extra .section-one  .icons-links h1{
-  margin-bottom: .5rem;
-}
-
-.contianer-informations-extra .section-one  .icons-links a{
-  font-size: 1.3rem;
-}
-
-.contianer-informations-extra .section-one  .icons-links {
-  margin-bottom: 2rem;
-}
-
-.contianer-informations-extra .section-one  .infromation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.contianer-informations-extra .section-one  .infromation span{
-   font-size: 1.2rem;
-}
-
-.contianer-informations-extra .section-one  .infromation a{
-  font-size: 1.2rem;
-}
-
-.contianer-informations-extra .section-one  .infromation a i{
-  color: var(--bg-color-black);
-}
-
-
-/* ================ section End Project ================== */
-
-.End-Project {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-  background: var(--bg-color-black);
-  color: var(--color-text);
-}
-
-.End-Project h2{
- font-size: 1.2rem;
-}
-
-}
-
-/* ================== media qeury ======================= */
-
-@media (min-width: 525px ) and (max-width: 722px )  {
-/*================= header navbar ================= */
-  @keyframes navbar {
-  100% {
-     width: 90%;
-     min-height: 260px;
-  }
-}
-
-/*================= section form informatins ================= */
-
-.form-informatins .delivery  .form{
- 
-  width: 480px;
-}
-
-.form-informatins .delivery  .form button{
-  width: 250px;
-}
-
-.form-informatins  .infromation .title p{
-  font-size: 1.5rem;
-}
-
-.form-informatins  .infromation .title .communication span {
-   font-size: 1.6rem;
-}
-
-.form-informatins  .infromation .title .communication a {
-   font-size: 1.5rem;
-   margin-bottom: 2rem;
-}
- 
-.form-informatins  .infromation  {
-  margin-bottom: 4rem;
-}
-
-.form-informatins  .infromation .icons a i{
-  font-size: 2.3rem;
-}
-
-/*========== contianer informations extra ============ */ 
-
-.contianer-informations-extra .section-one .logo-text img{
-  width: 200px;
-}
-
-.contianer-informations-extra .section-one .logo-text p{
-   font-size: 1.3rem;
-   width: 80%;
-   margin-bottom: 2rem;
-}
-
-.contianer-informations-extra .section-one  .icons-links h1{
-  margin-bottom: 1.3rem;
-}
-
-.contianer-informations-extra .section-one  .icons-links a{
-  font-size: 1.6rem;
-}
-
-.contianer-informations-extra .section-one  .infromation span{
-   font-size: 1.6rem;
-}
-
-.contianer-informations-extra .section-one  .infromation a{
-  font-size: 1.6rem;
-}
-
-}
-
-/* ================== media qeury ======================= */
-@media (min-width: 721px ) and (max-width: 899px ){
-
- /*================= section form informatins ================= */
-
-.form-informatins .delivery {
-  width: 650px;
-}
-
-.form-informatins .delivery  .form{
-  width: 100%;
-}
-
-.form-informatins .delivery  .form button{
-  width: 50%;
-  font-size: 1.5rem;
-}
-
-.form-informatins  .infromation .title p{
-  font-size: 1.8rem;
-}
-
-.form-informatins  .infromation .title .communication span {
-   font-size: 1.5rem;
-}
-
-.form-informatins  .infromation .title .communication a {
-   font-size: 1.5rem;
-}
- 
-.form-informatins  .infromation  {
-  margin-bottom: 4rem;
-}
-
-.form-informatins  .infromation .icons {
-  margin-top: 4rem;
-}
-
-.form-informatins  .infromation .icons a i{
-  font-size: 3rem;
-  margin: 0 1.5rem;
-}
-
-/*========== contianer informations extra ============ */ 
-
-.contianer-informations-extra .section-one .logo-text p{
-   font-size: 1.4rem;
-   text-align: center;
-}
-
-.contianer-informations-extra .section-one  .icons-links h1{
-  margin-bottom: 1.3rem;
-}
-
-/*================= section Barista Coffees ================= */
-
-.section-Barista .container-products .cart {
-    height: 300px;
-    padding: 0rem;
+ font-size: 1rem;
+ padding: 1rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ flex-grow: 1;
+}
+
+.section-Barista .container-products .cart .infromations p {
+   color: #6b5d52;
+   line-height: 1.6;
+   margin-bottom: 1rem;
+   font-size: 0.95rem;
+   font-weight: 400;
 }
 
 .section-Barista .container-products .cart .infromations .butt-price{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: static;
-  margin-top: 1.8rem;
-}
-
-}
-
-/* ================== media qeury ======================= */
-@media (min-width: 899px ) and (max-width: 1150px ) {
-
-
-/*================= section Barista Coffees ================= */
-
-.section-Barista .container-products {
-   gap: 1rem;
-}  
-
-.section-Barista .container-products .cart {
-    height: 180px;
-}
-
-.section-Barista .container-products .cart .img {
-    width: 90px;
-    height: 90px;
-   padding: .7rem;
-}
-
-.section-Barista .container-products .cart .infromations .butt-price{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
-  bottom: 0px;
-  right: 0px;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 2px solid #f0e8e0;
 }
 
 .section-Barista .container-products .cart .infromations .butt-price span{
-   margin-right: 0rem;
-   font-size: 1.4rem;
-   position: absolute;
-   bottom: -60px;
-   left: 15px;
+   color: var(--bg-color-coffee);
+   font-weight: 700;
+   font-size: 1rem;
+   letter-spacing: 0.5px;
 }
 
 .section-Barista .container-products .cart .infromations .butt-price button{
-   position: absolute;
-   bottom: -60px;
-   right: 15px;
+  width: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  border: 2px solid var(--bg-color-coffee);
+  background: linear-gradient(135deg, var(--bg-color-coffee) 0%, var(--bg-color-orange) 100%);
+  color: var(--color-text);
+  font-weight: bold;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px #542e0526;
 } 
+.section-Barista .container-products .cart .infromations .butt-price button:hover{
+  background: linear-gradient(135deg, var(--bg-color-orange) 0%, #8b4d0d 100%);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px #542e054d;
+}
+
+.section-Barista .container-products .cart .infromations .butt-price button:active {
+  transform: scale(0.98);
+} 
+
 
 /*================= section form informatins ================= */
 
-
 .form-informatins {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-around;
+  align-items: stretch;
+  background: linear-gradient(135deg, #542e05 0%, #6b3d0a 100%);
+  padding: 3rem 2rem;
+  gap: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .form-informatins .delivery  .form{
-  width: 500px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  background: white;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 30px #0000001a;
+}
+
+.form-informatins .delivery  .form input{
+  width: 100%;
+  height: 2.7rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.8rem;
+  border: 2px solid #f0e8e0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafaf8;
+}
+
+.form-informatins .delivery  .form input::placeholder {
+  color: #999;
+}
+
+.form-informatins .delivery  .form input:focus{
+  border: 2px solid var(--bg-color-light);
+  background: white;
+  outline: none;
+  box-shadow: 0 0 0 3px #cba4561a;
 }
 
 .form-informatins .delivery  .form textarea{
-  height: 280px;
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  resize: none;
+  overflow: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 0.8rem;
+  border: 2px solid #f0e8e0;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafaf8;
+}
+
+.form-informatins .delivery  .form textarea::placeholder {
+  color: #999;
+}
+
+.form-informatins .delivery  .form textarea:focus{
+  border: 2px solid var(--bg-color-light);
+  background: white;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(203, 164, 86, 0.1);
 }
 
 .form-informatins .delivery  .form button{
-  font-size: 1.5rem;
+  width: 150px;
+  padding: .4rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, var(--bg-color-coffee) 0%, var(--bg-color-orange) 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 20px #542e054d;
+  letter-spacing: 0.5px;
 }
 
+.form-informatins .delivery  .form button:hover{
+  background: linear-gradient(135deg, var(--bg-color-orange) 0%, #8b4d0d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px #542e0566;
+}
+
+.form-informatnis .delivery .form button:active {
+  transform: translateY(0);
+}
+
+.form-informatins  .infromation {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 300px;
+}
+
+.form-informatins  .infromation .title{
+  margin-bottom: 2rem;
+}
+
+.form-informatins  .infromation .title p{
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.form-informatins  .infromation .title .communication{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin: 2rem 0;
+   gap: 1.2rem;
+}
 
 .form-informatins  .infromation .title .communication span {
-   margin-bottom: 1.2rem;
-   font-size: 1.5rem;
+   font-size: 1rem;
+   color: #f0e8e0;
+   font-weight: 500;
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+}
+
+.form-informatins  .infromation .title .communication a {
+   font-size: 1rem;
+   color: #f0e8e0;
+   transition: all 0.3s ease;
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+}
+  
+.form-informatins  .infromation .title .communication a:hover {
+   color: #cba456;
+}
+  
+.form-informatins  .infromation .title .communication .fa-phone {
+  color: var(--color-text-green);
+  font-size: 1rem;
+}
+
+.form-informatins  .infromation .title .communication .fa-location-dot {
+  color: #87ceeb;
+  font-size: 1rem;
+}
+
+.form-informatins  .infromation .title .communication .fa-envelope {
+  color: #ff9800;
+  font-size: 1rem;
 }
 
 .form-informatins  .infromation  {
@@ -932,120 +460,583 @@ body {
 }
 
 .form-informatins  .infromation .icons {
-   position: static;
-   margin: 5rem 0;
    display: flex;
+   gap: 1.5rem;
    align-items: center;
-   justify-content: center;
+   margin-top: 2rem;
+   flex-wrap: wrap;
 }
 
 .form-informatins  .infromation .icons a{
-   margin: 0 1.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.3s ease;
 }
 
 .form-informatins  .infromation .icons a i{
-  font-size: 2.8rem;
+  font-size: 1.8rem;
+  color: white;
 }
 
-/*========== contianer informations extra ============ */
-.contianer-informations-extra .section-one  .icons-links h1{
-  margin-bottom: 1.3rem;
-  font-size: 1.5rem;
+.form-informatins  .infromation .icons a .fa-facebook-f{
+  color:#4267B2;
 }
 
+.form-informatins  .infromation .icons a .fa-square-instagram{
+  color:#E1306C;
 }
 
-/* ================== media qeury ======================= */
-@media (min-width: 1150px ) and (max-width: 1460px ) {
 
-/*================= section Barista Coffees ================= */
-.section-Barista .container-products .cart {
-    height: 180px;
+.form-informatins  .infromation .icons a .fa-x-twitter{
+  color:#161616;
 }
 
-.section-Barista .container-products .cart .img {
-    width: 90px;
-    height: 90px;
-   padding: .3rem;
+.form-informatins  .infromation .icons a .fa-tiktok{
+  color:#161616;
 }
 
-.section-Barista .container-products .cart .infromations .butt-price{
-  position: relative;
-  bottom: 0px;
-  right: 0px;
+.form-informatins  .infromation .icons a i:hover {
+  color: #e0dbdb;
 }
 
-.section-Barista .container-products .cart .infromations .butt-price span{
-   position: absolute;
-   bottom: -60px;
-   left: 15px;
-}
+/* ================ section End Project ================== */
 
-.section-Barista .container-products .cart .infromations .butt-price button{
-   position: absolute;
-   bottom: -60px;
-   right: 15px;
-} 
-
-/*========== contianer informations extra ============ */
-.contianer-informations-extra .section-one  .icons-links h1{
-  margin-bottom: 1.3rem;
-  font-size: 1.6rem;
-}
-
-}
-
-/* ================== media qeury ======================= */
-@media (min-width: 1460px ) and (max-width: 1720px ) {
-  
-/*================= section Barista Coffees ================= */
-
-.section-Barista .container-products {
-   gap: 1rem;
-}  
-
-.section-Barista .container-products .cart {
-    height: 180px;
-}
-
-.section-Barista .container-products .cart .infromations .butt-price{
+.End-Project {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  position: relative;
-  bottom: -50px;
-  right: 0px;
+  justify-content: center;
+  padding: .8rem;
+  background: var(--bg-color-black);
+  color: var(--color-text);
 }
 
-.section-Barista .container-products .cart .infromations .butt-price span{
-   position: absolute;
-   right: 180px;
-   margin-right: 0rem;
-   font-size: 1.4rem;
+/* ============ RESPONSIVE MEDIA QUERIES ============ */
+
+/* Large Screens - Desktop (1200px and above) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .section-Barista .container-products {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 2rem 2rem;
+    gap: 2rem;
+  }
+
+  .form-informatins {
+    
+    gap: 2rem;
+  }
+
+  .form-informatins .delivery .form {
+    max-width: 100%;
+  }
+
 }
 
-.section-Barista .container-products .cart .infromations .butt-price button{
-  width: 120px;
-  position: absolute;
-  right: 10px;
-  font-size: 1.3rem;
-  padding: .4rem;
-} 
-  
-}
+/* Tablets - Medium Screens (768px to 1199px) */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+  }
 
-/* ================== media query ================ */
+  /* Header Responsive */
+  .header .nav {
+    width: 100%;
+    padding: 10px;
+  }
 
-@media (min-width: 359px ) and (max-width: 470px ) {
+  .header .nav a {
+    font-size: 1rem;
+  }
+
+  .header .image {
+    width: 35px;
+  }
+
+  /* Section Home */
+  #section-home {
+    margin: 5rem 0 3rem 0;
+  }
+
+  #section-home .logo-descrpition {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #section-home .logo-descrpition .descrpition {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  #section-home .logo-descrpition .descrpition h2 {
+    font-size: 1.3rem;
+  }
+
+  #section-home .logo-descrpition .descrpition p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+
+  #section-home .logo-descrpition .image img {
+    width: 200px;
+  }
+
+  #section-home .logo {
+    height: 50vh;
+  }
+
+  /* Section Barista */
+  .section-Barista {
+    margin: 3rem 0;
+    padding: 1.5rem 0;
+  }
+
+  .section-Barista .logo-barista img {
+    width: 100px;
+  }
+
+  .section-Barista .container-products {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .section-Barista .container-products .cart {
+    box-shadow: 0 4px 12px rgba(84, 46, 5, 0.08);
+  }
+
+  .section-Barista .container-products .cart .img {
+    height: 150px;
+  }
+
+  .section-Barista .container-products .cart .infromations {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .section-Barista .container-products .cart .infromations p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price span {
+    font-size: 1.2rem;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price button {
+    width: 100px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Form Section */
+  .form-informatins {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .form-informatins .delivery  {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .form-informatins .delivery .form {
+    width: 80%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .form-informatins .delivery .form input {
+    height: 2.8rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .form-informatins .delivery .form textarea {
+    height: 120px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .form-informatins .delivery .form button {
+    width: 180px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .form-informatins .infromation {
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .form-informatins .infromation .title p {
+    font-size: 1.4rem;
+  }
+
+  .form-informatins .infromation .title .communication {
+    align-items: center;
+  }
+
+  .form-informatins .infromation .title .communication span,
+  .form-informatins .infromation .title .communication a {
+    font-size: 1rem;
+  }
+
+  .form-informatins .infromation .icons {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .form-informatins .infromation .icons a {
+    width: 45px;
+    height: 45px;
+  }
+
+  .form-informatins .infromation .icons a i {
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  .contianer-informations-extra .section-one {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contianer-informations-extra .section-one div {
+    width: 100%;
+  }
+
+  .contianer-informations-extra .section-one .logo-text img {
+    width: 150px;
+  }
+
+  .contianer-informations-extra .section-one .icons-links,
+  .contianer-informations-extra .section-one .infromation {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contianer-informations-extra .section-one .icons-links a,
+  .contianer-informations-extra .section-one .infromation span,
+  .contianer-informations-extra .section-one .infromation a {
+    font-size: 1.1rem;
+  }
+
+  .End-Project {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
   .End-Project h2 {
-   font-size: 1rem;
+    font-size: 1rem;
+  }
 }
-}
-/* ================== media query ================ */
 
-@media (min-width: 359px ) and (max-width: 415px ) {
+/* Mobile Devices - Small Screens (480px to 767px) */
+@media (max-width: 600px) {
+  /* Header Mobile Toggle */
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header .fa-bars {
+    display: block;
+    padding: 0.5rem;
+  }
+
+  .header .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--bg-color-white) 0%, #f5f0e8 100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 4rem;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    gap: 2rem;
+  }
+
+  .header .nav.active {
+    right: 0;
+  }
+
+  .header .nav .fa-xmark {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  .header .nav a {
+    font-size: 1.2rem;
+    display: block;
+    padding: 1rem 2rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f0e8e0;
+  }
+
+  .header .image {
+    width: 30px;
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  /* Section Barista - Smaller Cards */
+  .section-Barista .container-products {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .section-Barista .container-products .cart .img {
+    height: 150px;
+  }
+
+  .section-Barista .container-products .cart .infromations {
+    padding: 0.8rem;
+  }
+
+  .section-Barista .container-products .cart .infromations p {
+    font-size: 0.75rem;
+  }
+
+  .section-Barista .container-products .cart .img {
+    background-color: #276e10;
+  }
+  .section-Barista .container-products .cart .img img {
+    scale: .5;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price span {
+    font-size: 1rem;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price button {
+    width: 90px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Devices - Small Screens (480px to 767px) */
+@media (max-width: 480px) {
+  /* Header Mobile */
+  .header {
+    padding: 0.5rem;
+  }
+
+  .header .nav {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .header .nav a {
+    font-size: 0.9rem;
+  }
+
+  .header .image {
+    width: 30px;
+  }
+
+  /* Section Home Mobile */
+  #section-home {
+    margin: 3.5rem 0 2rem 0;
+  }
+
+  #section-home .logo-descrpition .descrpition {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: .8rem;
+  }
+
+  #section-home .logo-descrpition .descrpition h2 {
+    font-size: 1.1rem;
+  }
+
+  #section-home .logo-descrpition .descrpition p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+  #section-home .logo-descrpition .image img {
+    width: 150px;
+  }
+
+  #section-home .logo {
+    height: 40vh;
+  }
+
+  /* Section Barista Mobile */
+  .section-Barista .logo-barista img {
+    width: 80px;
+  }
+
+  .section-Barista .container-products {
+    grid-template-columns: 1fr;
+    padding: 1rem 0.5rem;
+    gap: 1.2rem;
+  }
+
+  .section-Barista .container-products .cart .img {
+    height: 180px;
+  }
+
+  .section-Barista .container-products .cart .infromations {
+    padding: 1rem;
+  }
+
+  .section-Barista .container-products .cart .infromations p {
+    font-size: 0.8rem;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price span {
+    font-size: 1.1rem;
+  }
+
+  .section-Barista .container-products .cart .infromations .butt-price button {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  /* Form Mobile */
+  .form-informatins {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .form-informatins .delivery .form {
+    padding: 1.2rem;
+  }
+
+  .form-informatins .delivery .form input {
+    height: 2.6rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .form-informatins .delivery .form textarea {
+    height: 100px;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .form-informatins .delivery .form button {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .form-informatins .infromation {
+    padding: 1rem;
+  }
+
+  .form-informatins .infromation .title p {
+    font-size: 1.2rem;
+  }
+
+  .form-informatins .infromation .title .communication {
+    gap: 0.8rem;
+  }
+
+  .form-informatins .infromation .title .communication span,
+  .form-informatins .infromation .title .communication a {
+    font-size: 0.9rem;
+  }
+
+  .form-informatins .infromation .icons a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .form-informatins .infromation .icons a i {
+    font-size: 1.3rem;
+  }
+
+  /* Footer Mobile */
+  .contianer-informations-extra {
+    padding: 2rem 1rem;
+  }
+
+  .contianer-informations-extra .section-one .logo-text img {
+    width: 120px;
+  }
+
+  .contianer-informations-extra .section-one .logo-text p,
+  .contianer-informations-extra .section-one .icons-links a,
+  .contianer-informations-extra .section-one .infromation span,
+  .contianer-informations-extra .section-one .infromation a {
+    font-size: 0.95rem;
+  }
+
   .End-Project h2 {
-   font-size: .8rem;
+    font-size: 0.85rem;
+  }
 }
 
+/* Extra Small Devices (less than 480px) */
+@media (max-width: 380px) {
+  #section-home .logo-descrpition .descrpition h2 {
+    font-size: 1rem;
+  }
+
+  #section-home .logo-descrpition .descrpition p {
+    font-size: 0.8rem;
+  }
+
+  #section-home .logo-descrpition .image img {
+    width: 120px;
+  }
+
+  .section-Barista .container-products {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .section-Barista .container-products .cart .infromations p {
+    font-size: 0.75rem;
+  }
+
+  .form-informatins {
+    padding: 1rem 0.5rem;
+  }
+
+  .form-informatins .infromation .title p {
+    font-size: 1.1rem;
+  }
+
+  .form-informatins .infromation .title .communication span,
+  .form-informatins .infromation .title .communication a {
+    font-size: 0.8rem;
+  }
 }
