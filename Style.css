@@ -241,11 +241,11 @@ body {
 }
 
 .section-Barista .container-products .cart .infromations p {
-   color: #6b5d52;
+   color: #000000;
    line-height: 1.6;
    margin-bottom: 1rem;
-   font-size: 0.95rem;
-   font-weight: 400;
+   font-size: 1rem;
+   font-weight:bold;
 }
 
 .section-Barista .container-products .cart .infromations .butt-price{
@@ -580,8 +580,8 @@ body {
     width: 200px;
   }
 
-  #section-home .logo {
-    height: 50vh;
+  #section-home .logo img{
+    height: 100vh;
   }
 
   /* Section Barista */

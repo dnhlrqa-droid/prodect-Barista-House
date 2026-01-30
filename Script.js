@@ -62,3 +62,88 @@ window.onscroll = () => {
         Header.classList.remove("active");
    }
 }
+
+// =================== Shwo items Orders loops =================== //
+let Menu = [
+{   id: 1,
+   title: "شاي بالبرتقال المنعش",
+   price: 15,
+   img: "./images/photo-3.png",
+   quantity: 0},
+{   id: 2,
+   title: "شاي أحمر بالليمون",
+   price: 3,
+   img: "./images/photo-14.png",
+   quantity: 0},
+{   id: 3,
+   title: "قهوة عربية",
+   price: 7,
+   img: "./images/photo-13.png",
+   quantity: 0},
+{   id: 4,
+   title: "قهوة عربية بالهيل",
+   price: 9.9,
+   img: "./images/photo-12.png",
+   quantity: 0},
+{   id: 5,
+   title: "كابتشينو بالهيل والكريمة المخفوقة بالشوكولات",
+   price: 16.5,
+   img: "./images/photo-11.png",
+   quantity: 0},
+{   id: 6,
+   title: "شاي اصفر بالمليسة",
+   price: 4,
+   img: "./images/photo-10.png",
+   quantity: 0},
+{   id: 7,
+   title: "شاي أخضر بالياسمين",
+   price: 5.5,
+   img: "./images/photo-9.png",
+   quantity: 0},
+{   id: 8,
+   title: "كابتشينو بالقرنفل",
+   price: 7.8,
+   img: "./images/photo-8.png",
+   quantity: 0},
+{   id: 9,
+   title: "كابتشينو بالڤانيلا",
+   price: 14.5,
+   img: "./images/photo-7.png",
+   quantity: 0},
+{   id: 10,
+   title: "كابتشينو بالشيكولاتة",
+   price: 13.5,
+   img: "./images/photo-6.png",
+   quantity: 0},
+{   id: 11,
+   title: "كابتشينو بالكراميل",
+   price: 11.99,
+   img: "./images/photo-5.png",
+   quantity: 0},
+{   id: 12,
+   title: "شاي أخضر بالنعناع",
+   price: 10,
+   img: "./images/photo-4.png",
+   quantity: 0},
+
+]
+
+let Orders = document.querySelectorAll("#Menu .container-products");
+
+Menu.forEach(item => {
+    Orders[0].innerHTML += `
+              <div class="cart">
+                      <div class="img">
+                             <img src=${item.img} alt="coffee" loading="lazy">
+                      </div>
+                      <div class="infromations">
+                                 <p>${item.title}</p>
+                             <div class="butt-price">
+                                  <span>$${item.price}</span>
+                                  <button>Request</button>
+                             </div>
+                      </div>
+               </div>
+    `;
+});
+
